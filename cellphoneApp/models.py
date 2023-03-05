@@ -1,9 +1,9 @@
 from django.db import models
-
+import decimal
 # Create models here.
 
 class Manufacture(models.Model):
-    names = models.CharField(max_length=50, primary_key=True)
+    names = models.CharField(max_length=100, primary_key=True)
 
 class Product(models.Model):
     Id = models.AutoField(primary_key=True) 
@@ -28,8 +28,6 @@ class Laptop(Product):
     Battery = models.CharField(max_length=30)
     operatorSystem = models.CharField(max_length=50)
     Others = models.CharField(max_length=50)
-    
-    
 
 class Smartphone(Product):
     Operator_System = models.CharField(max_length=50)
@@ -62,6 +60,7 @@ class Branch(models.Model):
     Name = models.CharField(max_length=50)
     Address = models.CharField(max_length=50)
     Phone = models.CharField(max_length=20)
+    EstablishmentDate = models.DateField(auto_now=True)
     idProductColors = models.ManyToManyField(Product_Color, through='Branch_Product_Color')
     
 class Branch_Product_Color(models.Model):
@@ -72,8 +71,8 @@ class Branch_Product_Color(models.Model):
 
 class Promotion(models.Model):
     Id = models.AutoField(primary_key=True)
-    timeStart = models.DateTimeField()
-    timeEnd = models.DateTimeField()
+    timeStart = models.DateTimeField(auto_now=True)
+    timeEnd = models.DateTimeField(auto_now=True)
     Active = models.BooleanField(default=False)
     idBrandProductColor = models.ManyToManyField(Branch_Product_Color, through='Branch_Promotion_Product')
 
@@ -96,12 +95,15 @@ class Order(models.Model):
     deliveryAddress = models.CharField(max_length=50)
     deliveryPhone = models.CharField(max_length=50)
     Status = models.CharField(max_length=30)
-    idBranchProductColor = models.ManyToManyField(Branch_Product_Color,through='Order_Branch_Product_Color')
+    idBranchProductColor = models.ManyToManyField(Branch_Product_Color,through='OrderDetail')
     idUser = models.ForeignKey('User', on_delete=models.PROTECT)
-class Order_Branch_Product_Color(models.Model):
+    
+class OrderDetail(models.Model):
     Id = models.AutoField(primary_key=True)
     idOder = models.ForeignKey(Order, on_delete=models.PROTECT)
     idBrandProductColor = models.ForeignKey(Branch_Product_Color, on_delete=models.PROTECT)
+    Quantity = models.IntegerField(default=0)
+    
 class User(models.Model):
     Id = models.AutoField(primary_key=True)
     Name = models.CharField(max_length=30)
@@ -110,29 +112,9 @@ class User(models.Model):
     Hometown = models.CharField(max_length=50)
     userName = models.CharField(max_length=30)
     passWord = models.CharField(max_length=30)
-    birthDay = models.DateField()
+    birthDay = models.DateField(auto_now=True)
     phoneNumber = models.CharField(max_length=20)
     idRole = models.ForeignKey('Role', on_delete=models.PROTECT)
 
-class Cart(models.Model):
-    Id = models.AutoField(primary_key=True)
-    idUser = models.ForeignKey(User, on_delete=models.CASCADE)
-    idBranchProductColor = models.ManyToManyField(Branch_Product_Color, through='Cart_Product_Branch_Color')
-
-class Cart_Product_Branch_Color(models.Model):
-    Id = models.AutoField(primary_key=True)
-    idCart = models.ForeignKey(Cart, on_delete = models.PROTECT)
-    idBranchProductColor = models.ForeignKey(Branch_Product_Color, on_delete=models.PROTECT)
-
 class Role(models.Model):
     nameRole = models.CharField(max_length=30, primary_key = True)
-    permissions = models.ManyToManyField('Permission', through='Role_Permission')
-
-class Permission(models.Model):
-    Id = models.AutoField(primary_key=True)
-    namePermission = models.CharField(max_length=30)
-
-class Role_Permission(models.Model):
-    Id = models.AutoField(primary_key=True)
-    idRole = models.ForeignKey(Role, on_delete=models.PROTECT)
-    idPermission = models.ForeignKey(Permission, on_delete=models.PROTECT)

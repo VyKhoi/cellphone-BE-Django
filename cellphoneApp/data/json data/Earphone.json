@@ -1,0 +1,219 @@
+[
+        {
+            "Id": 1,
+            "Name": "Apple AirPods Pro",
+            "nameManufacture": "Apple",
+            "connectionType": "Bluetooth",
+            "Design": "In-ear",
+            "Frequency_Response": "20 Hz - 20 kHz"
+        },
+        
+        {
+            "Id": 2,
+            "Name": "Bose QuietComfort Earbuds",
+            "nameManufacture": "Bose",
+            "connectionType": "Bluetooth",
+            "Design": "In-ear",
+            "Frequency_Response": "20 Hz - 20 kHz"
+        },
+        
+        {
+            "Id": 3,
+            "Name": "Jabra Elite 85t",
+            "nameManufacture": "Jabra",
+            "connectionType": "Bluetooth",
+            "Design": "In-ear",
+            "Frequency_Response": "20 Hz - 20 kHz"
+        },
+        
+        {
+            "Id": 4,
+            "Name": "Sony WF-1000XM4",
+            "nameManufacture": "Sony",
+            "connectionType": "Bluetooth",
+            "Design": "In-ear",
+            "Frequency_Response": "20 Hz - 20 kHz"
+        },
+        
+        {
+            "Id": 5,
+            "Name": "Beats Studio Buds",
+            "nameManufacture": "Beats",
+            "connectionType": "Bluetooth",
+            "Design": "In-ear",
+            "Frequency_Response": "20 Hz - 20 kHz"
+        },
+        
+        {
+            "Id": 6,
+            "Name": "Sennheiser Momentum True Wireless 2",
+            "nameManufacture": "Sennheiser",
+            "connectionType": "Bluetooth",
+            "Design": "In-ear",
+            "Frequency_Response": "5 Hz - 21 kHz"
+        },
+        
+        {
+            "Id": 7,
+            "Name": "Shure SE425-CL",
+            "nameManufacture": "Shure",
+            "connectionType": "Wired",
+            "Design": "In-ear",
+            "Frequency_Response": "20 Hz - 19 kHz"
+        },
+        {
+            "Id": 8,
+            "Name": "JBL Quantum 800",
+            "nameManufacture": "JBL",
+            "connectionType": "Wireless",
+            "Design": "Over-ear",
+            "Frequency_Response": "20 Hz - 20 kHz"
+        },
+        {
+            "Id": 9,
+            "Name": "Apple AirPods",
+            "nameManufacture": "Apple",
+            "connectionType": "Bluetooth",
+            "Design": "In-ear",
+            "Frequency_Response": "20 Hz - 20 kHz"
+        },
+        {
+            "Id": 10,
+            "Name": "Sony WF-SP800N",
+            "nameManufacture": "Sony",
+            "connectionType": "Bluetooth",
+            "Design": "In-ear",
+            "Frequency_Response": "20 Hz - 20 kHz"
+        },
+        {
+            "Id": 11,
+            "Name": "JBL Free X",
+            "nameManufacture": "JBL",
+            "connectionType": "Bluetooth",
+            "Design": "In-ear",
+            "Frequency_Response": "20 Hz - 20 kHz"
+        },
+        {
+            "Id": 12,
+            "Name": "Apple EarPods with Lightning Connector",
+            "nameManufacture": "Apple",
+            "connectionType": "Wired",
+            "Design": "In-ear",
+            "Frequency_Response": "20 Hz - 20 kHz"
+        },
+        {
+            "Id": 13,
+            "Name": "JBL Reflect Mini 2",
+            "nameManufacture": "JBL",
+            "connectionType": "Wireless",
+            "Design": "In-ear",
+            "Frequency_Response": "10 Hz - 22 kHz"
+        },
+        {
+            "Id": 14,
+            "Name": "Sony MDRXB50AP",
+            "nameManufacture": "Sony",
+            "connectionType": "Wired",
+            "Design": "In-ear",
+            "Frequency_Response": "4 Hz - 24 kHz"
+        },
+        {
+            "Id": 15,
+            "Name": "JBL Quantum 300",
+            "nameManufacture": "JBL",
+            "connectionType": "Wired",
+            "Design": "Over-ear",
+            "Frequency_Response": "20 Hz - 20 kHz"
+        },
+        {
+            "Id": 14,
+            "Name": "Apple Beats Solo3",
+            "nameManufacture": "Apple",
+            "connectionType": "Wireless",
+            "Design": "On-ear",
+            "Frequency_Response": "20 Hz - 20 kHz"
+        },
+        {
+            "Id": 16,
+            "Name": "JBL TUNE 120TWS",
+            "nameManufacture": "JBL",
+            "connectionType": "Wireless",
+            "Design": "In-ear",
+            "Frequency_Response": "20 Hz - 20 kHz"
+        },
+        {
+            "Id": 17,
+            "Name": "Sony MDRZX110/BLK",
+            "nameManufacture": "Sony",
+            "connectionType": "Wired",
+            "Design": "On-ear",
+            "Frequency_Response": "12 Hz - 22 kHz"
+        },
+        {
+            "Id": 18,
+            "Name": "Apple AirPods Max",
+            "nameManufacture": "Apple",
+            "connectionType": "Wireless",
+            "Design": "Over-ear",
+            "Frequency_Response": "20 Hz - 20 kHz"
+        },
+        {
+            "Id": 19,
+            "Name": "Sony WH-1000XM4",
+            "nameManufacture": "Sony",
+            "connectionType": "Wireless",
+            "Design": "Over-ear",
+            "Frequency_Response": "4 Hz - 40 kHz"
+        },
+        {
+            "Id": 20,
+            "Name": "Apple Beats Flex",
+            "nameManufacture": "Apple",
+            "connectionType": "Wireless",
+            "Design": "In-ear",
+            "Frequency_Response": "20 Hz - 20 kHz"
+        },
+        {
+            "Id": 21,
+            "Name": "JBL LIVE 300TWS",
+            "nameManufacture": "JBL",
+            "connectionType": "Wireless",
+            "Design": "In-ear",
+            "Frequency_Response": "20 Hz - 20 kHz"
+        },
+        {
+            "Id": 22,
+            "Name": "Sony WI-C310",
+            "nameManufacture": "Sony",
+            "connectionType": "Wireless",
+            "Design": "In-ear",
+            "Frequency_Response": "20 Hz - 20 kHz"
+        },
+        {
+            "Id": 23,
+            "Name": "JBL Tune 500BT",
+            "nameManufacture": "JBL",
+            "connectionType": "Wireless",
+            "Design": "On-ear",
+            "Frequency_Response": "20 Hz - 20 kHz"
+        },
+        {
+            "Id": 24,
+            "Name": "Apple Beats Studio3",
+            "nameManufacture": "Apple",
+            "Price": 349.99,
+            "Description": "Wireless over-ear headphones with Pure Adaptive Noise Cancelling and up to 22 hours of battery life",
+            "Color": "Defiant Black-Red",
+            "connectionType": "Wireless",
+            "Design": "Over-ear",
+            "Frequency_Response": "20 Hz - 20 kHz"
+        },
+        {
+            "Id": 25,
+            "Name": "JBL Endurance PEAK",
+            "nameManufacture": "JBL",
+            "connectionType": "Wireless",
+            "Design": "In-ear",
+            "Frequency_Response": "20 Hz - 20 kHz"
+        }
+]

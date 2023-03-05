@@ -25,8 +25,8 @@
     },
     {
         "id": 3,
-        "name": "Laptop Asus ZenBook Duo",
-        "nameManufacture": "Asus",
+        "name": "Laptop ASUS ZenBook Duo",
+        "nameManufacture": "ASUS",
         "CPU": "Intel Core i7-10510U",
         "RAM": "16GB LPDDR3 2133MHz",
         "ROM": "1TB PCIe NVMe M.2 SSD",
@@ -61,7 +61,7 @@
     },
     {
         "id": 6,
-        "name": "Laptop Apple MacBook Air",
+        "name": "Laptop MacBook Air M1",
         "nameManufacture": "Apple",
         "CPU": "Apple M1 chip",
         "RAM": "8GB Unified Memory",

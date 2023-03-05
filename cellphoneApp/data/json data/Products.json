@@ -1,0 +1,416 @@
+[
+    {
+        "id": 1,
+        "name": "Samsung Galaxy S21 Ultra",
+        "nameManufacture": "Samsung"
+    },
+    {
+        "id": 2,
+        "name": "iPhone 13 Pro Max",
+        "nameManufacture": "Apple"
+    },
+    {
+        "id": 3,
+        "name": "vivo X70 Pro+",
+        "nameManufacture": "vivo"
+    },
+    {
+        "id": 4,
+        "name": "Xiaomi Mi 11 Ultra",
+        "nameManufacture": "Xiaomi"
+    },
+    {
+        "id": 5,
+        "name": "OPPO Find X3 Pro",
+        "nameManufacture": "OPPO"
+    },
+    {
+        "id": 6,
+        "name": "OnePlus 9 Pro",
+        "nameManufacture": "OnePlus"
+    },
+    {
+        "id": 7,
+        "name": "realme GT Master Edition",
+        "nameManufacture": "realme"
+    },
+    {
+        "Id": 8,
+        "Name": "Samsung Galaxy A52",
+        "nameManufacture": "Samsung"
+    },
+    {
+        "Id": 9,
+        "Name": "iPhone 12 Pro",
+        "nameManufacture": "Apple"
+    },
+    {
+        "Id": 10,
+        "Name": "Samsung Galaxy S21",
+        "nameManufacture": "Samsung"
+    },
+    {
+        "id": 11,
+        "name": "Samsung Galaxy Note S21 Ultra",
+        "nameManufacture": "Samsung"
+    },
+    {
+        "Id": 12,
+        "Name": "Laptop Dell Inspiron 15 3000",
+        "nameManufacture": "Dell"
+    },
+    {
+        "id": 13,
+        "name": "Laptop HP Pavilion 15",
+        "nameManufacture": "HP"
+    },
+    {
+        "id": 14,
+        "name": "Laptop Dell Inspiron 13 7000",
+        "nameManufacture": "Dell"
+    },
+    {
+        "Id": 15,
+        "Name": "Laptop ASUS VivoBook Flip 14",
+        "nameManufacture": "ASUS"
+    },
+    {
+        "Id": 16,
+        "Name": "Laptop ASUS TUF Gaming F15",
+        "nameManufacture": "ASUS"
+    },
+    {
+        "Id": 17,
+        "Name": "Laptop ASUS ZenBook 14",
+        "nameManufacture": "ASUS"
+    },
+    {
+        "id": 18,
+        "name": "Laptop Acer Swift 3",
+        "nameManufacture": "Acer"
+    },
+    {
+        "id": 19,
+        "name": "Laptop ASUS ZenBook Duo",
+        "nameManufacture": "ASUS"
+    },
+    {
+        "id": 20,
+        "name": "Laptop Lenovo ThinkPad X1 Carbon",
+        "nameManufacture": "Lenovo"
+    },
+    {
+        "Id": 21,
+        "Name": "Laptop Acer Aspire 5",
+        "nameManufacture": "Acer"
+    },
+    {
+        "Id": 22,
+        "Name": "Laptop Gaming Acer Nitro 5",
+        "nameManufacture": "Acer"
+    },
+    {
+        "Id": 23,
+        "Name": "Laptop Acer Swift 7",
+        "nameManufacture": "Acer"
+    },
+    {
+        "Id": 24,
+        "Name": "Laptop Gaming Acer Predator Helios 300",
+        "nameManufacture": "Acer"
+    },
+    {
+        "Id": 25,
+        "Name": "Laptop Acer Aspire 7",
+        "nameManufacture": "Acer"
+    },
+    {
+        "id": 26,
+        "name": "Laptop MacBook Air M1",
+        "nameManufacture": "Apple"
+    },
+    {
+        "id": 27,
+        "name": "Laptop MacBook Air M2",
+        "nameManufacture": "Apple"
+    },
+    {
+        "id": 28,
+        "name": "Laptop MacBook Pro 13 M2",
+        "nameManufacture": "Apple"
+    },
+    {
+        "id": 29,
+        "name": "Laptop MacBook Pro 16",
+        "nameManufacture": "Apple"
+    },
+    {
+        "id": 30,
+        "name": "Laptop MacBook Pro 14",
+        "nameManufacture": "Apple"
+    },
+    {
+        "id": 31,
+        "name": "Laptop MacBook Pro 16 M1",
+        "nameManufacture": "Apple"
+    },
+    {
+        "Id": 32,
+        "Name": "MacBook Pro 13-inch Touch Bar",
+        "nameManufacture": "Apple"
+    },
+    {
+        "id": 33,
+        "name": "Laptop HP Pavilion 15",
+        "nameManufacture": "HP"
+    },
+    {
+        "id": 34,
+        "name": "Laptop HP Envy 13",
+        "nameManufacture": "HP"
+    },
+    {
+        "id": 35,
+        "name": "Laptop HP Pavilion 14",
+        "nameManufacture": "HP"
+    },
+    {
+        "id": 36,
+        "name": "Laptop HP Envy 15",
+        "nameManufacture": "HP"
+    },
+    {
+        "id": 37,
+        "name": "Laptop HP Gaming Victus 16",
+        "nameManufacture": "HP"
+    },
+    {
+        "id": 38,
+        "name": "Laptop HP Gaming Victus 15",
+        "nameManufacture": "HP"
+    },
+    {
+        "id": 39,
+        "name": "Laptop HP Pavilion Aero 13",
+        "nameManufacture": "HP"
+    },
+    {
+        "id": 40,
+        "name": "Laptop HP Zbook Firefly 14",
+        "nameManufacture": "HP"
+    },
+    {
+        "id": 41,
+        "name": "Laptop Dell Vostro 5620",
+        "nameManufacture": "Dell"
+    },
+    {
+        "id": 42,
+        "name": "Laptop Dell Latitude 3520",
+        "nameManufacture": "Dell"
+    },
+    {
+        "Id": 43,
+        "Name": "Laptop Lenovo ThinkPad X1 Carbon",
+        "nameManufacture": "Lenovo"
+    },
+    {
+        "Id": 44,
+        "Name": "Laptop Lenovo IdeaPad Flex 5",
+        "nameManufacture": "Lenovo"
+    },
+    {
+        "Id": 45,
+        "Name": "Lenovo IdeaPad 5",
+        "nameManufacture": "Lenovo"
+    },
+    {
+        "Id": 46,
+        "Name": "Lenovo IdeaPad 5 Pro",
+        "nameManufacture": "Lenovo"
+    },
+    {
+        "Id": 47,
+        "Name": "Laptop Lenovo IdeaPad 3",
+        "nameManufacture": "Lenovo"
+    },
+    {
+        "Id": 48,
+        "Name": "Laptop Lenovo IdeaPad Gaming 3",
+        "nameManufacture": "Lenovo"
+    },
+    {
+        "Id": 49,
+        "Name": "Laptop Lenovo IdeaPad ThinkBook 13",
+        "nameManufacture": "Lenovo"
+    },
+    {
+        "Id": 50,
+        "Name": "Laptop Lenovo IdeaPad ThinkBook 14",
+        "nameManufacture": "Lenovo"
+    },
+    {
+        "Id": 51,
+        "Name": "Laptop Lenovo Yoga Slim 7",
+        "nameManufacture": "Lenovo"
+    },
+    {
+        "Id": 52,
+        "Name": "Laptop Lenovo Yoga Slim 7 Pro",
+        "nameManufacture": "Lenovo"
+    },
+    {
+        "Id": 53,
+        "Name": "Laptop Lenovo Gaming Legion 5",
+        "nameManufacture": "Lenovo"
+    },
+    {
+        "id": 54,
+        "name": "Laptop ASUS VivoBook S15",
+        "nameManufacture": "Asus"
+    },
+    {
+        "id": 55,
+        "name": "Laptop MSI Prestige 14",
+        "nameManufacture": "MSI"
+    },
+    {
+        "id": 56,
+        "name": "Laptop MSI Gaming GF63 Thin",
+        "nameManufacture": "MSI"
+    },
+    {
+        "id": 55,
+        "name": "Laptop MSI Prestige 14 EVO",
+        "nameManufacture": "MSI"
+    },
+    {
+        "id": 56,
+        "name": "Laptop MSI Modern 14",
+        "nameManufacture": "MSI"
+    },
+    {
+        "id": 57,
+        "name": "Laptop MSI Modern 15",
+        "nameManufacture": "MSI"
+    },
+    {
+        "id": 58,
+        "name": "Laptop MSI Gaming Bravo 15",
+        "nameManufacture": "MSI"
+    },
+    {
+        "id": 59,
+        "name": "Laptop MSI Gaming Katana",
+        "nameManufacture": "MSI"
+    },
+    {
+        "id": 60,
+        "name": "Laptop MSI Gaming Alpha 15",
+        "nameManufacture": "MSI"
+    },
+    {
+        "id": 61,
+        "name": "Laptop Gigabyte Aero 15",
+        "nameManufacture": "Gigabyte"
+    },
+    {
+        "id": 62,
+        "name": "Laptop Gigabyte U4 UD",
+        "nameManufacture": "Gigabyte"
+    },
+    {
+        "id": 63,
+        "name": "Laptop Gigabyte G5 GD",
+        "nameManufacture": "Gigabyte"
+    },
+    {
+        "id": 64,
+        "name": "Laptop Gigabyte G5 GE",
+        "nameManufacture": "Gigabyte"
+    },
+    {
+        "id": 65,
+        "name": "Laptop Gigabyte G5 KD",
+        "nameManufacture": "Gigabyte"
+    },
+    {
+        "id": 66,
+        "name": "Laptop Gigabyte G5 MD",
+        "nameManufacture": "Gigabyte"
+    },
+    {
+        "Id": 67,
+        "Name": "Gigabyte Aorus 7",
+        "nameManufacture": "Gigabyte"
+    },
+    {
+        "Id": 68,
+        "Name": "Gigabyte Aorus 17X",
+        "nameManufacture": "Gigabyte"
+    },
+    {
+        "Id": 69,
+        "Name": "Gigabyte Aero 15 OLED",
+        "nameManufacture": "Gigabyte"
+    },
+    {
+        "Id": 70,
+        "Name": "Gigabyte Aorus 17G",
+        "nameManufacture": "Gigabyte"
+    },
+    {
+        "id": 71,
+        "name": "Laptop Razer Blade Stealth 13",
+        "nameManufacture": "Razer"
+    },
+    {
+        "id": 72,
+        "name": "Laptop LG Gram 2021",
+        "nameManufacture": "LG"
+    },
+    {
+        "id": 73,
+        "name": "Laptop LG Gram 2022",
+        "nameManufacture": "LG"
+    },
+    {
+        "Id": 74,
+        "Name": "Razer Blade 17 Pro",
+        "nameManufacture": "Razer"
+    },
+    {
+        "id": 75,
+        "name": "Laptop Razer Blade Stealth 13",
+        "nameManufacture": "Razer"
+    },
+    {
+        "Id": 76,
+        "Name": "AirPods Pro",
+        "nameManufacture": "Apple"
+    },
+        
+    {
+        "Id": 77,
+        "Name": "Bose QuietComfort Earbuds",
+        "nameManufacture": "Bose"
+    },
+        
+    {
+        "Id": 78,
+        "Name": "Jabra Elite 85t",
+        "nameManufacture": "Jabra"
+    },
+        
+    {
+        "Id": 79,
+        "Name": "Sony WF-1000XM4",
+        "nameManufacture": "Sony"
+    },
+        
+    {
+        "Id": 80,
+        "Name": "Beats Studio Buds",
+        "nameManufacture": "Beats"
+    }
+]

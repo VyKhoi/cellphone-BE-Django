@@ -25,5 +25,48 @@
     },
     {
         "names": "ASUS"
+    },
+    {
+        "names": "Dell"
+    },
+    {
+        "names": "HP"
+    },
+    {
+        "names": "MSI"
+    },
+    {
+        "names": "Acer"
+    },
+    {
+        "names": "Lenovo"
+    },
+    {
+        "names": "LG"
+    },
+    {
+        "names": "Razer"
+    },
+    {
+        "names": "Gigabyte"
+    },
+    {
+        "names": "Sony"
+    },
+    {
+        "names": "JBL"
+    },
+    {
+        "names": "Jabra"
+    },
+    {
+        "names": "Bose"
+    },
+    {
+        "names": "Beats"
+    },
+    {
+        "names": "Shure"
     }
+
 ]
