@@ -14,12 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
 
 # các URL khác cho chức năng thêm, xóa, sửa và tìm kiếm sản phẩm
-
+from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('home/',include('cellphoneApp.urls'))
 ]
 
