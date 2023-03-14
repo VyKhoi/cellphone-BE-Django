@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
-    'cellphoneApp.apps.CellphoneAppConfig'
+    'cellphoneApp.apps.CellphoneAppConfig',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [

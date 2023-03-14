@@ -15,6 +15,10 @@ from django.shortcuts import get_object_or_404
 from django.http import JsonResponse
 
 from django.db.models import Q
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .models import *
+from .serializers import *
 
 
 def hello(request):
@@ -32,25 +36,42 @@ def get_color_names(request):
 
 
 # cái hàm nài dùng để hien thị detail
-def get_detail_product(request, branch_id,product_id):
+def get_detail_product(request, branch_id,product_id,type_of_product):
+    table = 0
+    operator_system = ''
+    # Định nghĩa giá trị table dựa trên giá trị của type_of_product
+    if type_of_product == 1:
+        table = "cellphoneapp_smartphone"
+        operator_system = "Operator_System"
+    elif type_of_product == 2:
+        table = "cellphoneapp_laptop"
+        operator_system = "operatorSystem"
+
+    else:
+        table = "unknown_table"
+
+    # In giá trị table
+    print('bang de selecttttttttttttttttttttttttttttt',table)
+
     with connection.cursor() as cursor:
         cursor.execute("""
-             SELECT  pc.Id AS ProductColorId, pc.idProduct_id AS productID, pc.Price,pc.nameColor_id as mau_cua_san_pham,  bpp.discountRate, p.timeStart, p.timeEnd, bp.Amount, b.Name AS branch_name, p2.Name AS product_name, m.names AS manufacturer_name,i.linkImg, r.Title AS review_title, r.Content AS review_content, s.Operator_System, s.CPU, s.RAM, s.ROM, s.Battery, s.Others, bpc.Amount,i.Name as name_cua_anh
-            FROM cellphoneapp_promotion p 
-            JOIN cellphoneapp_branch_promotion_product bpp ON p.Id = bpp.idPromotion_id 
-            JOIN cellphoneapp_branch_product_color bp ON bpp.idBrandProductColor_id = bp.Id 
-            JOIN cellphoneapp_product_color pc ON bp.idProductColor_id = pc.Id 
-            JOIN cellphoneapp_branch b ON bp.idBranch_id = b.Id 
-            JOIN cellphoneapp_product p2 ON pc.idProduct_id = p2.Id 
-            JOIN cellphoneapp_manufacture m ON p2.nameManufacture_id = m.names 
-            LEFT JOIN cellphoneapp_imageproduct i ON p2.Id = i.idProduct_id 
-            LEFT JOIN cellphoneapp_review r ON p2.Id = r.idProduct_id 
-            LEFT JOIN cellphoneapp_smartphone s ON p2.Id = s.product_ptr_id 
-            JOIN cellphoneapp_branch_product_color bpc ON b.Id = bpc.idBranch_id AND pc.Id = bpc.idProductColor_id 
-            WHERE b.Id = %s AND s.Operator_System IS NOT NULL and p2.Id = %s and pc.nameColor_id like i.Name and p.Active = 1
-            
-            LIMIT 0, 1000;
-        """, [branch_id,product_id])
+                     SELECT  pc.Id AS ProductColorId, pc.idProduct_id AS productID, pc.Price,pc.nameColor_id as mau_cua_san_pham,  bpp.discountRate, p.timeStart, p.timeEnd, bp.Amount, b.Name AS branch_name, p2.Name AS product_name, m.names AS manufacturer_name,i.linkImg, r.Title AS review_title, r.Content AS review_content, s.{1}, s.CPU, s.RAM, s.ROM, s.Battery, s.Others, bpc.Amount,i.Name as name_cua_anh
+                    FROM cellphoneapp_promotion p 
+                    JOIN cellphoneapp_branch_promotion_product bpp ON p.Id = bpp.idPromotion_id 
+                    JOIN cellphoneapp_branch_product_color bp ON bpp.idBrandProductColor_id = bp.Id 
+                    JOIN cellphoneapp_product_color pc ON bp.idProductColor_id = pc.Id 
+                    JOIN cellphoneapp_branch b ON bp.idBranch_id = b.Id 
+                    JOIN cellphoneapp_product p2 ON pc.idProduct_id = p2.Id 
+                    JOIN cellphoneapp_manufacture m ON p2.nameManufacture_id = m.names 
+                    LEFT JOIN cellphoneapp_imageproduct i ON p2.Id = i.idProduct_id 
+                    LEFT JOIN cellphoneapp_review r ON p2.Id = r.idProduct_id 
+                    LEFT JOIN {0} s ON p2.Id = s.product_ptr_id 
+                    JOIN cellphoneapp_branch_product_color bpc ON b.Id = bpc.idBranch_id AND pc.Id = bpc.idProductColor_id 
+                    WHERE b.Id = %s AND s.{1} IS NOT NULL and p2.Id = %s and pc.nameColor_id like i.Name and p.Active = 1
+
+                    LIMIT 0, 1000;
+                """.format(table,operator_system), [branch_id, product_id])
+
         rows = cursor.fetchall()
 
 
@@ -143,7 +164,7 @@ def get_detail_product(request, branch_id,product_id):
     return JsonResponse(data, safe=False)
 
 
-def get_products(request, branch_id):
+def get_products_phones(request, branch_id):
     with connection.cursor() as cursor:
         cursor.execute("""
              SELECT  pc.Id AS ProductColorId, pc.idProduct_id AS productID, pc.Price, pc.nameColor_id, bpp.discountRate, p.timeStart, p.timeEnd, bp.Amount, b.Name AS branch_name, p2.Name AS product_name, m.names AS manufacturer_name,i.linkImg, r.Title AS review_title, r.Content AS review_content, s.Operator_System, s.CPU, s.RAM, s.ROM, s.Battery, s.Others, bpc.Amount 
@@ -158,7 +179,7 @@ def get_products(request, branch_id):
             LEFT JOIN cellphoneapp_review r ON p2.Id = r.idProduct_id 
             LEFT JOIN cellphoneapp_smartphone s ON p2.Id = s.product_ptr_id 
             JOIN cellphoneapp_branch_product_color bpc ON b.Id = bpc.idBranch_id AND pc.Id = bpc.idProductColor_id 
-            WHERE b.Id = %s AND s.Operator_System IS NOT NULL and  pc.nameColor_id like i.Name 
+            WHERE b.Id = %s AND s.Operator_System IS NOT NULL and  pc.nameColor_id like i.Name and p.Active = 1
             group by  pc.idProduct_id
             LIMIT 0, 1000;
 
@@ -191,3 +212,58 @@ def get_products(request, branch_id):
             data.append(d)
 
         return JsonResponse(data, safe=False)
+
+
+def get_products_laptop(request, branch_id):
+    with connection.cursor() as cursor:
+        cursor.execute("""
+           SELECT  pc.Id AS ProductColorId, pc.idProduct_id AS productID, pc.Price, pc.nameColor_id, bpp.discountRate, p.timeStart, p.timeEnd, bp.Amount, b.Name AS branch_name, p2.Name AS product_name, m.names AS manufacturer_name,i.linkImg, r.Title AS review_title, r.Content AS review_content, s.operatorSystem, s.CPU, s.RAM, s.ROM, s.Battery, s.Others, bpc.Amount 
+            FROM cellphoneapp_promotion p 
+            JOIN cellphoneapp_branch_promotion_product bpp ON p.Id = bpp.idPromotion_id 
+            JOIN cellphoneapp_branch_product_color bp ON bpp.idBrandProductColor_id = bp.Id 
+            JOIN cellphoneapp_product_color pc ON bp.idProductColor_id = pc.Id 
+            JOIN cellphoneapp_branch b ON bp.idBranch_id = b.Id 
+            JOIN cellphoneapp_product p2 ON pc.idProduct_id = p2.Id 
+            JOIN cellphoneapp_manufacture m ON p2.nameManufacture_id = m.names 
+            LEFT JOIN cellphoneapp_imageproduct i ON p2.Id = i.idProduct_id 
+            LEFT JOIN cellphoneapp_review r ON p2.Id = r.idProduct_id 
+            LEFT JOIN cellphoneapp_laptop s ON p2.Id = s.product_ptr_id 
+            JOIN cellphoneapp_branch_product_color bpc ON b.Id = bpc.idBranch_id AND pc.Id = bpc.idProductColor_id 
+            WHERE b.Id = %s AND s.operatorSystem IS NOT NULL and  pc.nameColor_id like i.Name and p.Active = 1
+            group by  pc.idProduct_id
+            LIMIT 0, 1000;
+           """, [branch_id])
+        rows = cursor.fetchall()
+        data = []
+        for row in rows:
+            d = {}
+            d['branch_name'] = row[8]
+            d['id'] = row[1]
+            d['name'] = row[9]
+            d['nameManufacture'] = row[10]
+            # row[4] theo câu truy van thi no la discount
+            d['currentPrice'] =float(row[2]) - float(row[2]) * row[4]
+
+            d['price'] = row[2]
+            d['discountRate'] = row[4]
+            d['id_product_color'] = row[0]
+            d['currentColor'] = row[3]
+            d['currentImage'] = row[11]
+            d['reviewTitle'] = row[12]
+            d['introduce'] = row[13]
+            d['operatorSystem'] = row[14]
+            d['CPU'] = row[15]
+            d['RAM'] = row[16]
+            d['ROM'] = row[17]
+            d['Battery'] = row[18]
+            d['Others'] = row[19]
+            d['amount'] = row[20]
+            data.append(d)
+
+        return JsonResponse(data, safe=False)
+
+@api_view(['GET'])
+def get_comments_product(request, id_product):
+    comments = Comment.objects.filter(idProduct_id=id_product)
+    serializer = CommentSerializer(comments, many=True)
+    return Response(serializer.data)
