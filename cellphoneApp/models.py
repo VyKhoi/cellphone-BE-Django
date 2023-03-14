@@ -103,6 +103,7 @@ class OrderDetail(models.Model):
     idOder = models.ForeignKey(Order, on_delete=models.PROTECT)
     idBrandProductColor = models.ForeignKey(Branch_Product_Color, on_delete=models.PROTECT)
     Quantity = models.IntegerField(default=0)
+    unit_price = models.DecimalField(max_digits=10, decimal_places=2)
     
 class User(models.Model):
     Id = models.AutoField(primary_key=True)
