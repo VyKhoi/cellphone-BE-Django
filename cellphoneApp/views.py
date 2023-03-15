@@ -445,7 +445,7 @@ def get_order_lockup(request, deliveryPhone):
             JOIN cellphoneapp_branch_product_color bpc ON od.idBrandProductColor_id = bpc.id
             JOIN cellphoneapp_product_color pc ON bpc.idProductColor_id = pc.id
             JOIN cellphoneapp_product p ON pc.idProduct_id = p.id
-            WHERE o.deliveryPhone = %s
+            WHERE o.deliveryPhone = %s AND o.Status in (1,2) 
             GROUP BY o.id
         """, [deliveryPhone])
         rows = cursor.fetchall()
