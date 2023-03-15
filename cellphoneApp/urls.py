@@ -12,5 +12,9 @@ urlpatterns = [
     path('branch/<int:branch_id>/product/<int:product_id>/type/<int:type_of_product>', views.get_detail_product, name='smartphone_detail'),
     path('branch/<int:branch_id>/laptops', views.get_products_laptop, name='laptop_list'),
     path('comments/<int:id_product>', views.get_comments_product,name='smartphone_comments'),
+
     path('order_lockup/<str:deliveryPhone>/', views.get_order_lockup, name='order_lockup'),
+
+    path('branch/<int:branch_id>/total-phones', views.get_products_phones_all, name='phones-list'),
+    path('branch/<int:branch_id>/total-laptops', views.get_products_laptops_all, name='phones-list'),
 ]
