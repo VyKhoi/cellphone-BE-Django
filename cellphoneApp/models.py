@@ -7,7 +7,8 @@ class Manufacture(models.Model):
 
 class Product(models.Model):
     Id = models.AutoField(primary_key=True) 
-    Name = models.CharField(max_length=100)  
+    Name = models.CharField(max_length=100)
+    Type = models.CharField(max_length=50)
     nameManufacture = models.ForeignKey('Manufacture', on_delete = models.PROTECT)
 
 class Color(models.Model):
@@ -108,14 +109,15 @@ class OrderDetail(models.Model):
 class User(models.Model):
     Id = models.AutoField(primary_key=True)
     Name = models.CharField(max_length=30)
-    Email = models.EmailField(max_length=100)
-    Gender = models.BooleanField(default=False)
-    Hometown = models.CharField(max_length=50)
-    userName = models.CharField(max_length=30)
-    passWord = models.CharField(max_length=30)
-    birthDay = models.DateField(auto_now=True)
-    phoneNumber = models.CharField(max_length=20)
+    Email = models.EmailField(max_length=100, blank=True, null=True, default='')
+    Gender = models.BooleanField(default=False, blank=True, null=True)
+    Hometown = models.CharField(max_length=50, blank=True, null=True,default='')
+    userName = models.CharField(max_length=30, blank=True, null=True,default='')
+    passWord = models.CharField(max_length=30, blank=True, null=True,default='')
+    birthDay = models.DateField(auto_now=True, blank=True, null=True,)
+    phoneNumber = models.CharField(max_length=20, blank=True, null=True,default='')
     idRole = models.ForeignKey('Role', on_delete=models.PROTECT)
+
 
 class Role(models.Model):
     nameRole = models.CharField(max_length=30, primary_key = True)
