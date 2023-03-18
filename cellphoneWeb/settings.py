@@ -53,10 +53,13 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware'
 ]
-
+CSRF_TRUSTED_ORIGINS = ['http://localhost:3000']
 ROOT_URLCONF = 'cellphoneWeb.urls'
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000"
+]
 CORS_ORIGIN_ALLOW_ALL = True
-CORS_ORIGIN_WHITELIST = ['http://localhost:3000',]
+CORS_ORIGIN_WHITELIST = ['http://localhost:3000']
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

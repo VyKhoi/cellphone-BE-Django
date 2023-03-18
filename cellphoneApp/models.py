@@ -112,7 +112,7 @@ class User(models.Model):
     Gender = models.BooleanField(default=False)
     Hometown = models.CharField(max_length=50)
     userName = models.CharField(max_length=30)
-    passWord = models.CharField(max_length=30)
+    passWord = models.CharField(max_length=250)
     birthDay = models.DateField(auto_now=True)
     phoneNumber = models.CharField(max_length=20)
     idRole = models.ForeignKey('Role', on_delete=models.PROTECT)

@@ -1,5 +1,6 @@
 from itertools import product
-
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render
 from cellphoneApp.models import *
 # Create your views here.
@@ -13,19 +14,60 @@ from django.db.models import Q
 from django.db import connection
 from django.shortcuts import get_object_or_404
 from django.http import JsonResponse
-
 from django.db.models import Q
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import *
 from .serializers import *
 import json
-
-
+from django.http import JsonResponse
+from django.middleware.csrf import get_token
+import bcrypt
 def hello(request):
     return HttpResponse("hello")
 
     JsonResponse(product, safe=False)
+
+@csrf_exempt
+def save_user(request):
+    if request.method == 'POST':
+        user_data = request.body.decode('utf-8')
+
+        user_dict = json.loads(user_data)
+        if user_dict['Gender'] == 'female':
+            user_dict['Gender'] = True
+        else:
+            user_dict['Gender'] = False
+
+        role = Role.objects.get(nameRole='customer')
+        print(role)
+        if User.objects.filter(userName=user_dict['Username']).exists():
+            return JsonResponse({'status': False, 'message': 'Username hoặc số điện thoại hoặc email đã trùng, vui lòng thay đổi để hợp lệ'})
+        if  User.objects.filter(phoneNumber = user_dict['PhoneNumber']).exists():
+            return JsonResponse({'status': False,
+                                 'message': 'Username hoặc số điện thoại hoặc email đã trùng, vui lòng thay đổi để hợp lệ'})
+        if User.objects.filter(Email= user_dict['Email']).exists():
+            return JsonResponse({'status': False,
+                                 'message': 'Username hoặc số điện thoại hoặc email đã trùng, vui lòng thay đổi để hợp lệ'})
+        user = User(
+            Name = user_dict['Name'],
+            Email= user_dict['Email'],
+            Gender=user_dict['Gender'],
+            Hometown=user_dict['Hometown'],
+            passWord=bcrypt.hashpw(user_dict['Password'].encode('utf-8'), bcrypt.gensalt()),
+            userName= user_dict['Username'],
+            phoneNumber = user_dict['PhoneNumber'],
+            idRole = role
+        )
+
+
+
+        user.save()
+        print("Lưu thành công")
+        # Lưu trữ user_dict vào database hoặc thực hiện các thao tác khác
+        return JsonResponse(user_dict)
+
+
 
 
 def get_color_names(request):

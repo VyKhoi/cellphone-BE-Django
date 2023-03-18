@@ -3,7 +3,6 @@ from django.urls import path
 from . import views
 # các URL khác cho chức năng thêm, xóa, sửa và tìm kiếm sản phẩm
 from django.urls import path,include
-
 urlpatterns = [
     path('oke', views.hello , name = 'index'),
     path('getcolor',views.get_color_names, name='index'),
@@ -18,4 +17,6 @@ urlpatterns = [
 
     path('branch/<int:branch_id>/total-phones', views.get_products_phones_all, name='phones-list'),
     path('branch/<int:branch_id>/total-laptops', views.get_products_laptops_all, name='phones-list'),
+    #dang ky
+    path('register/', views.save_user, name='register_user'),
 ]
