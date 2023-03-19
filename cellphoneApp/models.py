@@ -114,7 +114,11 @@ class User(models.Model):
     Gender = models.BooleanField(default=False, blank=True, null=True)
     Hometown = models.CharField(max_length=50, blank=True, null=True,default='')
     userName = models.CharField(max_length=30, blank=True, null=True,default='')
+<<<<<<< HEAD
     passWord = models.CharField(max_length=254, blank=True, null=True,default='')
+=======
+    passWord = models.CharField(max_length=255, blank=True, null=True,default='')
+>>>>>>> a85af010afdcc3e02ca20149b52c62d94f19e729
     birthDay = models.DateField(auto_now=True, blank=True, null=True,)
     phoneNumber = models.CharField(max_length=20, blank=True, null=True,default='')
 
