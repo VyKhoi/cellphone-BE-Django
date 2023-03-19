@@ -26,5 +26,5 @@ urlpatterns = [
     path('checkout-succeed', views.order,name = 'order_succeed'),
 
     path('branch/<int:branch_id>/search-price/<int:from_price>/<int:to_price>/<int:type_product>', views.search_price, name='search_price'),
-
+    # path('login/', views.login_view, name='login')
 ]

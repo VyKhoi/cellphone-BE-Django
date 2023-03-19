@@ -6,7 +6,11 @@ from django.shortcuts import render
 from cellphoneApp.models import *
 # Create your views here.
 from django.http import JsonResponse
-
+from rest_framework.views import APIView
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from django.contrib.auth import authenticate
 
 
 from django.http import HttpResponse
@@ -904,3 +908,36 @@ def order(request):
     return JsonResponse({
         'oke': 'oke',
     })
+
+
+# def login_view(request):
+#     print('xinchao')
+#     try:
+#         print('xinchao')
+#         if request.method == 'POST':
+#             print('xinchao')
+#             username = request.POST.get('username')
+#             password = request.POST.get('password')
+#             print(username)
+#             user = User.objects.get(username=username)
+#             if check_password(password, user.password):
+#                 # Xử lý đăng nhập thành công
+#                 response_data = {
+#                     'id': user.id,
+#                     'name': user.name
+#                 }
+#                 print('du lieu dang nhap thanh cong',response_data)
+#                 return JsonResponse(response_data)
+#             else:
+#                 # Xử lý đăng nhập không thành công
+#                 response_data = {'error': 'Invalid credentials'}
+#                 return JsonResponse(response_data, status=400)
+#     except User.DoesNotExist:
+#         # Xử lý lỗi khi người dùng không tồn tại
+#         response_data = {'error': 'User does not exist'}
+#         return JsonResponse(response_data, status=400)
+#     except Exception as e:
+#         # Xử lý lỗi khác
+#         response_data = {'error': str(e)}
+#         return JsonResponse(response_data, status=500)
+
